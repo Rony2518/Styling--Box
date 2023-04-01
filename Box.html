@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Poppins", sans-serif;
+            background-color: aquamarine;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: #ffffff;
+        }
+
+        .main {
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px gray;
+        }
+
+        #box {
+            height: 200px;
+            width: 200px;
+            border: 1px solid #333;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 5px #333;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("pexels-jess-bailey-designs-743986.jpg");
+        }
+
+        input {
+            width: 190px;
+            height: 20px;
+            border-radius: 25px;
+            padding: 12px;
+            font-size: 15px;
+            border: 2px solid rgb(12, 114, 238);
+        }
+
+        p {
+            font-size: 25px;
+            margin-top: -30px;
+            margin-bottom: 30px;
+        }
+
+        .data {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p>Styling Box</p>
+        <div id="box"></div>
+        <div class="data">
+            <span>Color:</span><input id="Color" placeholder="red / #ff0000" type="text">
+            <span>Border-Radius:</span><input id="Radius" placeholder="50px / 50%" type="text">
+            <span>Box-Shadow:</span><input id="shadow" placeholder="0 0 25px 0 red" type="text">
+        </div>
+    </div>
+    <script>
+        let box = document.getElementById("box"),
+            input = document.getElementById("Color"),
+            r = document.getElementById("Radius"),
+            s = document.getElementById("shadow");
+
+        input.addEventListener("input", () => {
+            box.style.background = input.value;
+        });
+
+        r.addEventListener("input", () => {
+            box.style.borderRadius = r.value;
+        });
+
+        s.addEventListener("input", () => {
+            box.style.boxShadow = s.value;
+        });
+    </script>
+</body>
+
+</html>
